@@ -1,0 +1,24 @@
+<div class="container">
+    <h3>Update Categorie</h3>
+    <form [formGroup]="categorieForm" (ngSubmit)="UpdateItem()">
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Nom</mat-label>
+                    <input matInput formControlName="name" placeholder="nom">
+                    <mat-error *ngIf="categorieForm.get('name')?.hasError('required')">This input is required!</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+            <div class="col-6">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Description</mat-label>
+                    <input matInput formControlName="description" placeholder="Description">
+                    <mat-error *ngIf="categorieForm.get('description')?.hasError('required')">This input is required!</mat-error>
+                </mat-form-field>
+            </div>
+          
+
+        <button class="btn btn-lg btn-primary" type="submit">Update </button>
+    </form>
+</div>

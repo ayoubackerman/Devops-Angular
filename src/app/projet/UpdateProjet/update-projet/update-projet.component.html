@@ -1,0 +1,68 @@
+<div class="container">
+    <h3>Ajouter un projet</h3>
+    <form [formGroup]="projetForm" (ngSubmit)="addItem()">
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Description</mat-label>
+                    <input matInput formControlName="description" placeholder="Description">
+                    <mat-error *ngIf="projetForm.get('description')?.hasError('required')">This input is required!</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Budget</mat-label>
+                    <input matInput formControlName="budget" placeholder="Budget">
+                    <mat-error *ngIf="projetForm.get('budget')?.hasError('required')">This input is required!</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Status</mat-label>
+                    <mat-select formControlName="status">
+                        <mat-option value="in progress">In Progress</mat-option>
+                        <mat-option value="done">Done</mat-option>
+                        <mat-option value="just started">Just Started</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="projetForm.get('status')?.hasError('required')">This input is required!</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Start Date</mat-label>
+                    <input matInput [matDatepicker]="startDatePicker" formControlName="startDate">
+                    <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #startDatePicker></mat-datepicker>
+                    <mat-error *ngIf="projetForm.get('startDate')?.hasError('required')">This input is required!</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>End Date</mat-label>
+                    <input matInput [matDatepicker]="endDatePicker" formControlName="endDate">
+                    <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #endDatePicker></mat-datepicker>
+                    <mat-error *ngIf="projetForm.get('endDate')?.hasError('required')">This input is required!</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Select a Client</mat-label>
+                    <mat-select formControlName="clientId" name="clientId">
+                      <mat-option *ngFor="let category of listOfClients" [value]="category.id">
+                        {{category.name}}
+                      </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="projetForm.get('clientId')?.hasError('required')">
+                      This input is required!
+                    </mat-error>
+                  </mat-form-field>
+            </div>
+        </div>
+        <button class="btn btn-lg btn-primary" type="submit">Modifier</button>
+    </form>
+</div>

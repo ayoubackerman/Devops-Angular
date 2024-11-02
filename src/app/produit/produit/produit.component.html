@@ -1,0 +1,59 @@
+<body>
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Gérer les produits</h2>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <a (click)="openAddItem()" class="btn btn-success" data-toggle="modal">
+                            <i class="material-icons">&#xE147;</i>
+                            <span>Ajouter un produit</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <input type="text" placeholder="Rechercher..." [(ngModel)]="searchTerm" (input)="applyFilter()" />
+            </div>
+
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>nom</th>
+                        <th>Description</th>
+                        <th>prix</th>
+                        <th>Quantité</th>
+                        <th>categorie</th>
+                        <th>image</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let dev of filteredProduits">
+                        <td>{{ dev.name }}</td>
+                        <td>{{ dev.description }}</td>
+                        <td>{{ dev.prix }}</td>
+                        <td>{{ dev.quantity }}</td>
+                        <td>{{ dev.categoryName }}</td>
+                        <td>
+                            <img [src]="dev.processedImg" alt="product-image" style="max-width: 100px; max-height: 100px;" />
+                        </td>
+                        <td>
+                            <a class="delete" data-toggle="modal" title="Delete" (click)="deleteItem(dev.id)">
+                                <i class="material-icons" data-toggle="tooltip">&#xE872;</i>
+                            </a>
+                            <a class="update" title="Update" data-toggle="modal" (click)="openUpdate(dev.id)">
+                                <i class="material-icons" data-toggle="tooltip">&#xE254;</i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <mat-paginator [length]="produits.length" [pageSize]="10" [pageSizeOptions]="[5, 10, 25]" (page)="pageChanged($event)"></mat-paginator>
+        </div>
+    </div>
+</body>

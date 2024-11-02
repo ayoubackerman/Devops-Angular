@@ -1,0 +1,10 @@
+<!-- main.component.html -->
+<app-header 
+    [collapsed]="isSideNavCollapsed"
+    [screenWidth]="screenWidth">
+></app-header>
+<app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
+<app-body
+    [collapsed]="isSideNavCollapsed"
+    [screenWidth]="screenWidth">
+</app-body>

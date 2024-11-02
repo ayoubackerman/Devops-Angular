@@ -1,0 +1,37 @@
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding:40px 0; background:#fff; font-family: 'Arvo', serif
+  }
+  h1 {
+    font-size:80px;
+  }
+  .logo-container img {
+    max-width: 300px; /* Adjust based on your logo size */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  /* Ensure the login container takes up the full viewport height */
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #02abff, #00d4ff);
+  }
+  
+  .login-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  

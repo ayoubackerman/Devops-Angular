@@ -1,0 +1,29 @@
+<div class="container">
+    <h3>Add Devi</h3>
+    <form [formGroup]="deviForm" (ngSubmit)="addItem()">
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Description</mat-label>
+                    <input matInput formControlName="description" placeholder="Description">
+                    <mat-error *ngIf="deviForm.get('description')?.hasError('required')">This input is required!</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Quantity</mat-label>
+                    <input matInput formControlName="quantity" placeholder="Quantity">
+                    <mat-error *ngIf="deviForm.get('quantity')?.hasError('required')">This input is required!</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-floating">
+            <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Price</mat-label>
+                <input matInput formControlName="price" placeholder="Price">
+                <mat-error *ngIf="deviForm.get('price')?.hasError('required')">This input is required!</mat-error>
+            </mat-form-field>
+        </div>
+        <button class="btn btn-lg btn-primary" type="submit">Add Devi</button>
+    </form>
+</div>

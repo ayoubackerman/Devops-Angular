@@ -1,0 +1,78 @@
+.container {
+    max-width: 90%;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.9); /* More opaque for readability */
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+}
+
+/* Title Styling */
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem; /* Larger for emphasis */
+    font-weight: 600; /* Bold for better visibility */
+    color: #343a40; /* Darker color for contrast */
+}
+
+/* Button Styles */
+.btn-primary {
+    font-family: 'Arial Rounded MT', sans-serif; /* Consistent font */
+    width: 100%;
+    background-color: #02abff; /* Main color */
+    border: none;
+    font-size: 1rem;
+    padding: 12px; /* Increased padding for comfort */
+    margin-top: 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0298e2; /* Darker shade on hover */
+}
+
+/* Mat Form Field Adjustments */
+.mat-form-field {
+    width: 100%;
+    margin-bottom: 15px; /* Space between fields */
+}
+
+input {
+    color: black;
+    font-size: 16px;
+    border: 1px solid #ddd; /* Light border for inputs */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px; /* Padding for better spacing */
+    transition: border 0.3s;
+}
+
+input:focus {
+    border-color: #02abff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Optional: Dialog Animation */
+.mat-dialog-container {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+
+    .title {
+        font-size: 1.5rem; /* Adjust title size for smaller screens */
+    }
+
+    .btn-primary {
+        padding: 10px; /* Adjust button padding */
+    }
+}

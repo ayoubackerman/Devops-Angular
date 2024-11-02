@@ -1,0 +1,176 @@
+/* General Body and Background Styles */
+body {
+    color: #343a40;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 14px; /* Slightly larger for better readability */
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    margin-top: 10%;
+}
+
+/* Container for the table and its operations */
+.table-wrapper {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    margin: 20px auto;
+    max-width: 95%;
+}
+
+/* Styling for the table header */
+.table-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #02abff; /* Blue background */
+    color: #ffffff;
+    border-radius: 6px;
+}
+
+.table-title h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Button styles in the table header */
+.table-title .btn {
+    color: #fff;
+    background-color: #02abff; /* Darker blue */
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.table-title .btn i {
+    margin-right: 5px;
+}
+
+.table-title .btn:hover {
+    background-color: #02abff; /* Even darker blue */
+}
+
+/* Table layout adjustments */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.table th,
+.table td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #f8f8f8;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fcfcfc;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #e9ecef; /* Light gray for hover effect */
+}
+
+/* Action icons in the table */
+.table td a.delete {
+    color: #02abff; /* Keep delete color as is for visibility */
+    cursor: pointer;
+}
+
+.table td a.delete:hover {
+    color: #02abff; /* Keep hover color as is for visibility */
+}
+
+/* Pagination styling */
+.pagination {
+    padding: 10px 0;
+    justify-content: flex-end;
+    display: flex;
+}
+
+.pagination li {
+    list-style: none;
+}
+
+.pagination li a {
+    color: #02abff; /* Blue links */
+    padding: 8px 12px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.pagination li a:hover {
+    color: #02abff; /* Darker blue on hover */
+}
+mat-paginator {
+    margin-top: 20px;
+
+    .mat-paginator-page-size {
+        display: inline-block;
+        margin-right: 8px;
+    }
+
+    .mat-paginator-range-label {
+        margin: 0 10px;
+        font-size: 14px;
+    }
+
+    .mat-button-base {
+        min-width: 40px; // Ensures a consistent button size
+    }
+}
+.search-container {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: flex-end;
+
+    input {
+        width: 250px;
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        transition: border 0.3s;
+
+        &:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        &::placeholder {
+            color: #aaa;
+        }
+    }
+}
+
+/* Responsive adjustments for smaller devices */
+@media (max-width: 768px) {
+    .table-wrapper {
+        padding: 10px;
+    }
+
+    .table-title {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .table-title h2 {
+        margin-bottom: 10px;
+    }
+
+    .table-title .btn {
+        padding: 6px 10px;
+    }
+
+    .table {
+        font-size: 12px;
+    }
+}
