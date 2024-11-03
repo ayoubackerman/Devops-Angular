@@ -20,9 +20,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 import { CategorieComponent } from './categorie/categorie/categorie.component';
 import { ProduitComponent } from './produit/produit/produit.component';
-import { DeviComponent } from './devi/devi/devi.component';
-import { AddDeviComponent } from './devi/AddDevi/add-devi/add-devi.component';
-import { SignatureComponent } from './signature/signature/signature.component';
 import { SignaturePadModule } from 'angular2-signaturepad';
 import { ProjetComponent } from './projet/projet/projet.component';
 import { ClientComponent } from './client/client/client.component';
@@ -49,9 +46,6 @@ import { UpdateProjetComponent } from './projet/UpdateProjet/update-projet/updat
     PagenotfoundComponent,
     CategorieComponent,
     ProduitComponent,
-    DeviComponent,
-    AddDeviComponent,
-    SignatureComponent,
     ProjetComponent,
     ClientComponent,
     AddCategorieComponent,
