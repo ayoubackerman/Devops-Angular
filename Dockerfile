@@ -1,21 +1,18 @@
 ## Build Stage
-FROM node:18.19.0 AS build
+FROM node:18.19.0-alpine AS build
 
 WORKDIR /app
-
-# Install Yarn
-RUN npm install -g yarn
 
 # Copy only package files first to leverage Docker cache for dependencies
 COPY package*.json /app/
 
-# Install dependencies using Yarn
+# Use Yarn to install dependencies
 RUN yarn install
 
 # Now copy the rest of the application code
 COPY ./ /app/
 
-# Run the build using Angular CLI
+# Run the build using Yarn
 RUN yarn run build --configuration=production --output-path=dist
 
 ## Production Stage
