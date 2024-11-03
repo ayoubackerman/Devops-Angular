@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-const BASE_URL ="http://localhost:8089/kaddem/";
+const BASE_URL ="http://Kaddem:8089/kaddem/";
 
 
 @Injectable({
