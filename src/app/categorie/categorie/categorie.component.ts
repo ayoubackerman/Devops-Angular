@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import { AddCategorieComponent } from '../AddCategorie/add-categorie/add-categorie.component';
 import { UpdateCategorieComponent } from '../UpdateCategorie/update-categorie/update-categorie.component';
 import { PageEvent } from '@angular/material/paginator';
+import { DepartementService } from 'src/app/Services/Departement/departement.service';
 
 @Component({
   selector: 'app-categorie',
@@ -23,7 +24,10 @@ export class CategorieComponent {
   constructor(
     private router: Router,
     private _dialogue: MatDialog,
-    private _cat: CategorieService
+    private _cat: CategorieService,
+    private _dep : DepartementService
+
+  
   ) {}
 
   openAddItem() {
@@ -41,7 +45,7 @@ export class CategorieComponent {
   }
 
   getAllDevi() {
-    this._cat.getItem().subscribe(res => {
+    this._dep.getItem().subscribe(res => {
       this.categories = res;
       this.filteredCategories = res; // Initialize filtered categories
       this.paginate();
@@ -51,8 +55,7 @@ export class CategorieComponent {
   applyFilter() {
     if (this.searchTerm) {
       this.filteredCategories = this.categories.filter(dev =>
-        dev.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-        dev.description.toLowerCase().includes(this.searchTerm.toLowerCase())
+        dev.nomDepart.toLowerCase().includes(this.searchTerm.toLowerCase()) 
       );
     } else {
       this.filteredCategories = [...this.categories];
@@ -66,7 +69,7 @@ export class CategorieComponent {
   }
 
   deleteItem(deviId: any) {
-    this._cat.deleteItemById(deviId).subscribe(res => {
+    this._dep.deleteItemById(deviId).subscribe(res => {
       if (res && res.body) {
         Swal.fire({
           title: 'Error!',

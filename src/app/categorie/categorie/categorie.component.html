@@ -31,13 +31,13 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let dev of paginatedCategories">
-                        <td>{{ dev.name }}</td>
+                        <td>{{ dev.nomDepart }}</td>
                         <td>{{ dev.description }}</td>
                         <td>
-                            <a class="delete" data-toggle="modal" title="Delete" (click)="deleteItem(dev.id)">
+                            <a class="delete" data-toggle="modal" title="Delete" (click)="deleteItem(dev.idDepart)">
                                 <i class="material-icons" data-toggle="tooltip">&#xE872;</i>
                             </a>
-                            <a class="update" title="Update" data-toggle="modal" (click)="openUpdate(dev.id)">
+                            <a class="update" title="Update" data-toggle="modal" (click)="openUpdate(dev.idDepart)">
                                 <i class="material-icons" data-toggle="tooltip">&#xE254;</i>
                             </a>
                         </td>

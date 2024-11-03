@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { CategorieService } from 'src/app/Services/categorie/categorie.service';
+import { DepartementService } from 'src/app/Services/Departement/departement.service';
 import { DeviService } from 'src/app/Services/devi/devi.service';
 import Swal from 'sweetalert2';
 
@@ -21,14 +22,14 @@ export class AddCategorieComponent {
     private snackbar: MatSnackBar,
  private _cat: CategorieService,
     private router: Router,
+    private _dep : DepartementService,
     @Inject(DOCUMENT) private document: Document
 
   ) {}
 
   ngOnInit(): void {
     this.categorieForm = this.fb.group({
-      name: [null, [Validators.required]],
-      description: [null, [Validators.required]],
+      nomDepart: [null, [Validators.required]],
         });
   }
 
@@ -46,10 +47,9 @@ export class AddCategorieComponent {
       } 
     } else {
       const formData: FormData = new FormData();
-      formData.append('description', this.categorieForm.get('description')!.value);
-      formData.append('name', this.categorieForm.get('name')!.value);
+      formData.append('nomDepart', this.categorieForm.get('nomDepart')!.value);
   
-      this._cat.addItem(formData).subscribe((res) => {
+      this._dep.addItem(formData).subscribe((res) => {
         if (res.id !== null) {
           Swal.fire({
             title: 'Success!',
