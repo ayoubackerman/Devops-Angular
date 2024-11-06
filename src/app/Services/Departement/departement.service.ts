@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-const BASE_URL ="http://192.168.50.4:8089/kaddem/";
+const BASE_URL ="http://localhost:8089/kaddem/";
 
 
 @Injectable({
@@ -26,8 +26,8 @@ export class DepartementService {
     return this.http.post(BASE_URL+"departement/add-departement",itemDto)
   }
   deleteItemById(idItem : any):Observable<any>{
-    return this.http.delete(BASE_URL+`departement/remove-departement/delete/${idItem}`)
+    return this.http.delete(BASE_URL+`departement/remove-departement/${idItem}`)
   }
   updateItem(idItem : number, itemDto : any):Observable<any>{
-    return this.http.put(BASE_URL+`departement/update-departement/Update/${idItem}`,itemDto);
+    return this.http.put(BASE_URL+`departement/update-departement/${idItem}`,itemDto);
   }}

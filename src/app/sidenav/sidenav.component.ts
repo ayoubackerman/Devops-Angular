@@ -65,33 +65,10 @@ export class SidenavComponent implements OnInit {
       {
           routeLink: 'categorie',
           icon: 'fal fa-tags', // Icon for "Gérer les catégories"
-          label: 'Gérer les catégories'
+          label: 'Gérer les departements'
       },
-      {
-          routeLink: 'produit',
-          icon: 'fal fa-box', // Icon for "Gérer les produits"
-          label: 'Gérer les produits'
-      },
-      {
-          routeLink: 'client',
-          icon: 'fal fa-users', // Icon for "Gérer les clients"
-          label: 'Gérer les clients'
-      },
-      {
-          routeLink: 'devi',
-          icon: 'fal fa-file-invoice', // Icon for "Gérer les devis"
-          label: 'Gérer les devis'
-      },
-      {
-          routeLink: 'projet',
-          icon: 'fal fa-chart-bar', // Icon for "Gérer les projets"
-          label: 'Gérer les projets'
-      },
-      {
-          routeLink: 'signature',
-          icon: 'fal fa-pen', // Icon for "Signature"
-          label: 'Signature'
-      },
+      
+
       // additional menu items...
   ];
 

@@ -1,10 +1,10 @@
 <div class="container">
-    <h3>Add Devi</h3>
+    <h3>Add Departemnt</h3>
     <form [formGroup]="categorieForm" (ngSubmit)="addItem()">
         <div class="row">
             <div class="col-6">
                 <mat-form-field appearance="fill" class="w-100">
-                    <mat-label>Nom</mat-label>
+                    <mat-label>Nom departement</mat-label>
                     <input matInput formControlName="nomDepart" placeholder="nom">
                     <mat-error *ngIf="categorieForm.get('nomDepart')?.hasError('required')">This input is required!</mat-error>
                 </mat-form-field>
@@ -13,6 +13,6 @@
     
           
 
-        <button class="btn btn-lg btn-primary" type="submit">Add Devi</button>
+        <button class="btn btn-lg btn-primary" type="submit">Add </button>
     </form>
 </div>
